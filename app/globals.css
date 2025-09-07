@@ -1,8 +1,8 @@
 @import 'tailwindcss';
-@import '@fontsource/jetbrains-mono/400.css';
-@import '@fontsource/jetbrains-mono/500.css';
-@import '@fontsource/jetbrains-mono/600.css';
-@import '@fontsource/jetbrains-mono/700.css';
+
+/* Optimized font loading - only load weights actually used */
+@import '@fontsource/jetbrains-mono/400.css' layer(fonts);
+@import '@fontsource/jetbrains-mono/600.css' layer(fonts);
 
 :root {
   /* VSCode Dark Theme Colors */
@@ -135,20 +135,20 @@
 @keyframes slide-up {
   from {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translate3d(0, 10px, 0);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translate3d(0, 0, 0);
   }
 }
 
 @keyframes slide-in-right {
   from {
-    transform: translateX(100%);
+    transform: translate3d(100%, 0, 0);
   }
   to {
-    transform: translateX(0);
+    transform: translate3d(0, 0, 0);
   }
 }
 
@@ -207,21 +207,74 @@ body {
   background: var(--vscode-text-disabled);
 }
 
-/* Utility classes for animations */
+/* Screen reader utilities */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Focus-visible utilities for skip nav */
+.skip-nav:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  padding: inherit;
+  margin: inherit;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+}
+
+/* Utility classes for animations - Optimized for mobile */
 .animate-cursor-blink {
   animation: cursor-blink 1s infinite;
+  will-change: opacity;
+  backface-visibility: hidden;
 }
 
 .animate-fade-in {
-  animation: fade-in 0.3s ease-in-out;
+  animation: fade-in 0.3s ease-out;
+  will-change: opacity;
+  animation-fill-mode: both;
 }
 
 .animate-slide-up {
   animation: slide-up 0.3s ease-out;
+  will-change: transform, opacity;
+  animation-fill-mode: both;
+  backface-visibility: hidden;
 }
 
 .animate-slide-in-right {
   animation: slide-in-right 0.3s ease-out;
+  will-change: transform;
+  animation-fill-mode: both;
+  backface-visibility: hidden;
+}
+
+/* Clear will-change after animations complete */
+.animate-fade-in,
+.animate-slide-up,
+.animate-slide-in-right {
+  animation-play-state: running;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-in,
+  .animate-slide-up,
+  .animate-slide-in-right {
+    will-change: auto;
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
 }
 
 /* Reduce motion for accessibility */

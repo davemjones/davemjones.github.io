@@ -13,6 +13,7 @@ The design will incorporate terminal-inspired elements, monospace typography, an
 ## User Stories
 
 ### As a visitor, I want to:
+
 - Navigate seamlessly between four distinct sections: About Me, Experience, Hobbies and Side Projects, and People Smarter than Me
 - Experience a visually consistent VSCode dark theme throughout the site
 - Enjoy smooth transitions and terminal-inspired animations
@@ -20,12 +21,14 @@ The design will incorporate terminal-inspired elements, monospace typography, an
 - Feel the personality and technical expertise of the portfolio owner through design choices
 
 ### As a potential employer/client, I want to:
+
 - Quickly understand Dave's technical background and expertise
 - Navigate to relevant experience and project information
 - See evidence of continuous learning and community engagement
 - Experience a professionally designed interface that demonstrates attention to detail
 
 ### As a fellow developer, I want to:
+
 - Discover interesting projects and side work
 - Find curated resources from the "People Smarter than Me" section
 - Appreciate the technical implementation and design decisions
@@ -34,18 +37,21 @@ The design will incorporate terminal-inspired elements, monospace typography, an
 ## Spec Scope
 
 ### Core Layout Components
+
 - **Header**: Terminal-style prompt with navigation branding
 - **Navigation**: Horizontal menu bar with section indicators
 - **Main Content Areas**: Structured layouts for each section
 - **Footer**: Minimal design with contact/social links
 
 ### Navigation System
+
 - Four primary sections with distinct content strategies
 - Active state indicators using VSCode-inspired highlighting
 - Smooth transitions between sections
 - Mobile-responsive hamburger menu implementation
 
 ### Visual Design System
+
 - VSCode dark theme color palette implementation
 - Monospace typography hierarchy (JetBrains Mono or similar)
 - Terminal command prompt design elements
@@ -53,6 +59,7 @@ The design will incorporate terminal-inspired elements, monospace typography, an
 - Consistent spacing and layout grids
 
 ### Technical Implementation
+
 - Next.js 15.5.2 app router architecture
 - Tailwind CSS 4 for styling and responsive design
 - React 19.1.0 components with TypeScript
@@ -71,6 +78,7 @@ The design will incorporate terminal-inspired elements, monospace typography, an
 ## Expected Deliverable
 
 A fully functional, responsive portfolio website layout with:
+
 - Complete navigation system between all four sections
 - VSCode dark theme aesthetic implementation
 - Terminal-inspired design elements

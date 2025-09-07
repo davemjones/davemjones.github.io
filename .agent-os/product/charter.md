@@ -18,12 +18,14 @@ Dave M Jones Personal Resume is a developer-focused portfolio website that helps
 ### User Personas
 
 **Hiring Manager** (30-50 years old)
+
 - **Role:** Technical Recruiter or Engineering Manager
 - **Context:** Reviewing candidates for software development positions
 - **Pain Points:** Difficulty assessing both technical skills and personality fit from traditional resumes, lack of insight into candidate's passion projects
 - **Goals:** Find developers who are not only technically competent but also show creativity and continuous learning
 
 **Freelance Client** (25-45 years old)
+
 - **Role:** Small Business Owner or Startup Founder
 - **Context:** Looking for a developer to build or enhance their web presence
 - **Pain Points:** Uncertainty about developer's actual capabilities, concern about communication and reliability

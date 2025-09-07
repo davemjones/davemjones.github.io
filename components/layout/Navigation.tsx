@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 const navItems = [
   { label: 'About Me', href: '/', command: 'cd ~/about' },
@@ -18,17 +18,50 @@ const navItems = [
 export default function Navigation() {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const mobileMenuRef = useRef<HTMLDivElement>(null);
+  const toggleButtonRef = useRef<HTMLButtonElement>(null);
 
   const isActive = (href: string) => {
     return pathname === href;
   };
 
+  // Handle focus trap and keyboard navigation
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      // Focus first link when menu opens
+      const firstLink = mobileMenuRef.current?.querySelector('a');
+      firstLink?.focus();
+
+      // Prevent background scroll
+      document.body.style.overflow = 'hidden';
+    } else {
+      // Restore background scroll
+      document.body.style.overflow = '';
+    }
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (mobileMenuOpen && e.key === 'Escape') {
+        setMobileMenuOpen(false);
+        toggleButtonRef.current?.focus();
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = '';
+    };
+  }, [mobileMenuOpen]);
+
   return (
     <>
       {/* Desktop Navigation */}
-      <nav className="hidden md:block border-b border-[var(--vscode-border-primary)] bg-[var(--vscode-bg-secondary)]">
+      <nav
+        className="hidden md:block border-b border-[var(--vscode-border-primary)] bg-[var(--vscode-bg-secondary)]"
+        aria-label="Main navigation"
+      >
         <div className="container mx-auto px-4">
-          <ul className="flex space-x-1">
+          <ul className="flex space-x-1" role="list">
             {navItems.map((item) => (
               <li key={item.href}>
                 <Link
@@ -57,10 +90,12 @@ export default function Navigation() {
 
       {/* Mobile Navigation Toggle */}
       <button
+        ref={toggleButtonRef}
         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-        className="md:hidden fixed top-4 right-4 z-[60] p-2 bg-[var(--vscode-bg-secondary)] border border-[var(--vscode-border-primary)] rounded"
-        aria-label="Toggle navigation menu"
+        className="md:hidden fixed top-4 right-4 z-[60] p-2 bg-[var(--vscode-bg-secondary)] border border-[var(--vscode-border-primary)] rounded focus:outline-none focus:ring-2 focus:ring-[var(--vscode-blue)]"
+        aria-label={`${mobileMenuOpen ? 'Close' : 'Open'} navigation menu`}
         aria-expanded={mobileMenuOpen}
+        aria-controls="mobile-navigation"
       >
         <div className="w-6 h-5 flex flex-col justify-between">
           <span
@@ -77,6 +112,8 @@ export default function Navigation() {
 
       {/* Mobile Navigation Menu */}
       <div
+        ref={mobileMenuRef}
+        id="mobile-navigation"
         className={`
           md:hidden fixed inset-0 z-50 bg-[var(--vscode-bg-primary)] 
           transition-transform duration-300 ease-out
@@ -84,10 +121,14 @@ export default function Navigation() {
         `}
         role="dialog"
         aria-modal="true"
-        aria-label="Navigation menu"
+        aria-labelledby="mobile-nav-heading"
+        aria-hidden={!mobileMenuOpen}
       >
         <div className="p-8 pt-20">
-          <nav>
+          <h2 id="mobile-nav-heading" className="sr-only">
+            Site Navigation
+          </h2>
+          <nav aria-label="Main navigation">
             <ul className="space-y-4">
               {navItems.map((item) => (
                 <li key={item.href}>

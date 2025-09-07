@@ -12,12 +12,14 @@ The portfolio embodies a developer-focused aesthetic that balances professional 
 ## Visual Identity
 
 ### Brand Personality
+
 - **Professional yet Approachable**: Technical competence with human warmth
 - **Authentic Developer**: Honest representation of developer culture and tools
 - **Curated Simplicity**: Clean, purposeful design without unnecessary complexity
 - **Subtle Sophistication**: Refined details that demonstrate attention to quality
 
 ### Design Principles
+
 - **Functionality First**: Every visual element serves a purpose
 - **Consistent Execution**: Systematic approach to spacing, typography, and color
 - **Progressive Enhancement**: Graceful degradation across all devices
@@ -26,36 +28,38 @@ The portfolio embodies a developer-focused aesthetic that balances professional 
 ## Color System
 
 ### Primary Palette (VSCode Dark Theme)
+
 ```css
 /* Background Colors */
---vscode-bg-primary: #1e1e1e;           /* Main background */
---vscode-bg-secondary: #252526;         /* Card backgrounds */
---vscode-bg-tertiary: #2d2d30;          /* Elevated elements */
---vscode-bg-hover: #2a2d2e;             /* Hover states */
+--vscode-bg-primary: #1e1e1e; /* Main background */
+--vscode-bg-secondary: #252526; /* Card backgrounds */
+--vscode-bg-tertiary: #2d2d30; /* Elevated elements */
+--vscode-bg-hover: #2a2d2e; /* Hover states */
 
 /* Text Colors */
---vscode-text-primary: #d4d4d4;         /* Main text */
---vscode-text-secondary: #cccccc;       /* Secondary text */
---vscode-text-disabled: #858585;        /* Disabled text */
---vscode-text-inverse: #1e1e1e;         /* Text on light backgrounds */
+--vscode-text-primary: #d4d4d4; /* Main text */
+--vscode-text-secondary: #cccccc; /* Secondary text */
+--vscode-text-disabled: #858585; /* Disabled text */
+--vscode-text-inverse: #1e1e1e; /* Text on light backgrounds */
 
 /* Accent Colors */
---vscode-blue: #007acc;                 /* Primary accent, links */
---vscode-blue-hover: #1177bb;           /* Blue hover state */
---vscode-teal: #4ec9b0;                 /* Success, highlights */
---vscode-yellow: #ffcc02;               /* Warnings, attention */
---vscode-red: #f44747;                  /* Errors, critical */
---vscode-green: #608b4e;                /* Success states */
---vscode-purple: #c586c0;               /* Special highlights */
---vscode-orange: #ce9178;               /* String literals, warm accents */
+--vscode-blue: #007acc; /* Primary accent, links */
+--vscode-blue-hover: #1177bb; /* Blue hover state */
+--vscode-teal: #4ec9b0; /* Success, highlights */
+--vscode-yellow: #ffcc02; /* Warnings, attention */
+--vscode-red: #f44747; /* Errors, critical */
+--vscode-green: #608b4e; /* Success states */
+--vscode-purple: #c586c0; /* Special highlights */
+--vscode-orange: #ce9178; /* String literals, warm accents */
 
 /* Border Colors */
---vscode-border: #3e3e42;               /* Default borders */
---vscode-border-light: #464647;         /* Lighter borders */
---vscode-border-focus: #007acc;         /* Focus indicators */
+--vscode-border: #3e3e42; /* Default borders */
+--vscode-border-light: #464647; /* Lighter borders */
+--vscode-border-focus: #007acc; /* Focus indicators */
 ```
 
 ### Usage Guidelines
+
 - **Primary Background**: Use `#1e1e1e` for main page background
 - **Content Cards**: Use `#252526` for elevated content areas
 - **Interactive Elements**: Use `#007acc` for primary actions and links
@@ -64,7 +68,9 @@ The portfolio embodies a developer-focused aesthetic that balances professional 
 - **Text Hierarchy**: Primary text `#d4d4d4`, secondary text `#cccccc`
 
 ### Accessibility Compliance
+
 All color combinations maintain WCAG AA contrast ratios:
+
 - `#d4d4d4` on `#1e1e1e` = 12.63:1 (AAA)
 - `#007acc` on `#1e1e1e` = 4.52:1 (AA)
 - `#4ec9b0` on `#1e1e1e` = 8.59:1 (AAA)
@@ -72,9 +78,12 @@ All color combinations maintain WCAG AA contrast ratios:
 ## Typography System
 
 ### Font Families
+
 ```css
 /* Primary Font Stack */
-font-family: 'JetBrains Mono', 'Fira Code', 'SF Mono', 'Monaco', 'Inconsolata', 'Consolas', monospace;
+font-family:
+  'JetBrains Mono', 'Fira Code', 'SF Mono', 'Monaco', 'Inconsolata', 'Consolas',
+  monospace;
 
 /* Fallback Stack */
 font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
@@ -84,28 +93,30 @@ font-family: ui-monospace, SFMono-Regular, 'Roboto Mono', monospace;
 ```
 
 ### Typography Scale
+
 ```css
 /* Headings */
---text-4xl: 2.25rem;    /* 36px - Main page titles */
---text-3xl: 1.875rem;   /* 30px - Section headings */
---text-2xl: 1.5rem;     /* 24px - Subsection headings */
---text-xl: 1.25rem;     /* 20px - Card titles */
---text-lg: 1.125rem;    /* 18px - Large body text */
+--text-4xl: 2.25rem; /* 36px - Main page titles */
+--text-3xl: 1.875rem; /* 30px - Section headings */
+--text-2xl: 1.5rem; /* 24px - Subsection headings */
+--text-xl: 1.25rem; /* 20px - Card titles */
+--text-lg: 1.125rem; /* 18px - Large body text */
 
 /* Body Text */
---text-base: 1rem;      /* 16px - Default body text */
---text-sm: 0.875rem;    /* 14px - Small text, captions */
---text-xs: 0.75rem;     /* 12px - Fine print, metadata */
+--text-base: 1rem; /* 16px - Default body text */
+--text-sm: 0.875rem; /* 14px - Small text, captions */
+--text-xs: 0.75rem; /* 12px - Fine print, metadata */
 
 /* Line Heights */
---leading-tight: 1.25;   /* Headings */
---leading-normal: 1.5;   /* Body text */
+--leading-tight: 1.25; /* Headings */
+--leading-normal: 1.5; /* Body text */
 --leading-relaxed: 1.75; /* Large blocks of text */
 ```
 
 ### Typography Usage
+
 - **Page Titles**: 36px, weight 600, tight line height
-- **Section Headers**: 30px, weight 500, tight line height  
+- **Section Headers**: 30px, weight 500, tight line height
 - **Navigation**: 16px, weight 500, normal line height
 - **Body Text**: 16px, weight 400, normal line height
 - **Code Snippets**: 14px, weight 400, tight line height
@@ -114,43 +125,56 @@ font-family: ui-monospace, SFMono-Regular, 'Roboto Mono', monospace;
 ## Layout System
 
 ### Grid Structure
+
 ```css
 /* Container Sizes */
---container-xs: 20rem;      /* 320px - Mobile */
---container-sm: 24rem;      /* 384px - Mobile large */
---container-md: 48rem;      /* 768px - Tablet */
---container-lg: 64rem;      /* 1024px - Desktop */
---container-xl: 80rem;      /* 1280px - Desktop large */
---container-2xl: 96rem;     /* 1536px - Desktop XL */
+--container-xs: 20rem; /* 320px - Mobile */
+--container-sm: 24rem; /* 384px - Mobile large */
+--container-md: 48rem; /* 768px - Tablet */
+--container-lg: 64rem; /* 1024px - Desktop */
+--container-xl: 80rem; /* 1280px - Desktop large */
+--container-2xl: 96rem; /* 1536px - Desktop XL */
 
 /* Spacing Scale */
---space-1: 0.25rem;    /* 4px */
---space-2: 0.5rem;     /* 8px */
---space-3: 0.75rem;    /* 12px */
---space-4: 1rem;       /* 16px */
---space-5: 1.25rem;    /* 20px */
---space-6: 1.5rem;     /* 24px */
---space-8: 2rem;       /* 32px */
---space-10: 2.5rem;    /* 40px */
---space-12: 3rem;      /* 48px */
---space-16: 4rem;      /* 64px */
---space-20: 5rem;      /* 80px */
---space-24: 6rem;      /* 96px */
+--space-1: 0.25rem; /* 4px */
+--space-2: 0.5rem; /* 8px */
+--space-3: 0.75rem; /* 12px */
+--space-4: 1rem; /* 16px */
+--space-5: 1.25rem; /* 20px */
+--space-6: 1.5rem; /* 24px */
+--space-8: 2rem; /* 32px */
+--space-10: 2.5rem; /* 40px */
+--space-12: 3rem; /* 48px */
+--space-16: 4rem; /* 64px */
+--space-20: 5rem; /* 80px */
+--space-24: 6rem; /* 96px */
 ```
 
 ### Responsive Breakpoints
+
 ```css
 /* Mobile First Approach */
-@media (min-width: 640px)  { /* sm - Small tablets */ }
-@media (min-width: 768px)  { /* md - Tablets */ }
-@media (min-width: 1024px) { /* lg - Desktop */ }
-@media (min-width: 1280px) { /* xl - Large desktop */ }
-@media (min-width: 1536px) { /* 2xl - Extra large desktop */ }
+@media (min-width: 640px) {
+  /* sm - Small tablets */
+}
+@media (min-width: 768px) {
+  /* md - Tablets */
+}
+@media (min-width: 1024px) {
+  /* lg - Desktop */
+}
+@media (min-width: 1280px) {
+  /* xl - Large desktop */
+}
+@media (min-width: 1536px) {
+  /* 2xl - Extra large desktop */
+}
 ```
 
 ## Component Specifications
 
 ### Header Component
+
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │ dave@portfolio:~$ █                               [≡ Menu]   │
@@ -158,6 +182,7 @@ font-family: ui-monospace, SFMono-Regular, 'Roboto Mono', monospace;
 ```
 
 **Specifications:**
+
 - Height: 64px (mobile), 72px (desktop)
 - Background: `#1e1e1e` with subtle bottom border `#3e3e42`
 - Terminal prompt: "dave@portfolio:~$" with blinking cursor
@@ -165,6 +190,7 @@ font-family: ui-monospace, SFMono-Regular, 'Roboto Mono', monospace;
 - Desktop: Full navigation visible
 
 ### Navigation Component
+
 ```
 Desktop Layout:
 ┌─────────────────────────────────────────────────────────────┐
@@ -183,12 +209,14 @@ Mobile Layout (Expanded):
 ```
 
 **Specifications:**
+
 - Active state: Blue underline `#007acc` with glow effect
 - Hover state: Subtle background highlight `#2a2d2e`
 - Mobile: Full-screen overlay with slide animation
 - Command format: Each nav item styled as terminal command
 
 ### Section Container
+
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │ user@portfolio:~/section$ ls -la                           │
@@ -201,15 +229,17 @@ Mobile Layout (Expanded):
 ```
 
 **Specifications:**
+
 - Terminal window styling with title bar
 - Command prompt shows current section
 - Content area with proper padding and spacing
 - Subtle shadow for depth: `0 4px 12px rgba(0,0,0,0.15)`
 
 ### Terminal Prompt Elements
+
 ```css
 .terminal-prompt::before {
-  content: "user@portfolio:~" attr(data-path) "$ ";
+  content: 'user@portfolio:~' attr(data-path) '$ ';
   color: #4ec9b0;
   font-weight: 600;
 }
@@ -224,6 +254,7 @@ Mobile Layout (Expanded):
 ```
 
 ### Card Components
+
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │ > Card Title                                         [Icon] │
@@ -235,6 +266,7 @@ Mobile Layout (Expanded):
 ```
 
 **Specifications:**
+
 - Background: `#252526`
 - Border: 1px solid `#3e3e42`
 - Border radius: 6px
@@ -244,6 +276,7 @@ Mobile Layout (Expanded):
 ## Interactive Elements
 
 ### Buttons
+
 ```css
 /* Primary Button */
 .btn-primary {
@@ -274,6 +307,7 @@ Mobile Layout (Expanded):
 ```
 
 ### Links
+
 ```css
 .link-primary {
   color: #007acc;
@@ -288,13 +322,14 @@ Mobile Layout (Expanded):
 }
 
 .link-external::after {
-  content: " ↗";
+  content: ' ↗';
   font-size: 0.875em;
   opacity: 0.7;
 }
 ```
 
 ### Form Elements
+
 ```css
 .input {
   background: #1e1e1e;
@@ -315,6 +350,7 @@ Mobile Layout (Expanded):
 ## Animation System
 
 ### Transition Specifications
+
 ```css
 /* Standard Transitions */
 --transition-fast: 0.15s ease;
@@ -328,10 +364,17 @@ Mobile Layout (Expanded):
 ```
 
 ### Animation Keyframes
+
 ```css
 @keyframes cursor-blink {
-  0%, 50% { opacity: 1; }
-  51%, 100% { opacity: 0; }
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
 }
 
 @keyframes fade-in-up {
@@ -358,27 +401,28 @@ Mobile Layout (Expanded):
 ```
 
 ### Loading States
+
 ```css
 .loading-skeleton {
-  background: linear-gradient(
-    90deg,
-    #252526 25%,
-    #2d2d30 50%,
-    #252526 75%
-  );
+  background: linear-gradient(90deg, #252526 25%, #2d2d30 50%, #252526 75%);
   background-size: 200% 100%;
   animation: loading-shimmer 1.5s infinite;
 }
 
 @keyframes loading-shimmer {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
 }
 ```
 
 ## Responsive Design Specifications
 
 ### Mobile Layout (320px - 639px)
+
 - Single column layout
 - Full-width navigation drawer
 - Condensed header with hamburger menu
@@ -386,12 +430,14 @@ Mobile Layout (Expanded):
 - Touch-friendly interactive elements (min 44px)
 
 ### Tablet Layout (640px - 1023px)
+
 - Condensed horizontal navigation
 - Two-column content where appropriate
 - Moderate spacing and padding
 - Hybrid touch/mouse interactions
 
 ### Desktop Layout (1024px+)
+
 - Full horizontal navigation
 - Multi-column layouts where beneficial
 - Generous spacing and padding
@@ -399,6 +445,7 @@ Mobile Layout (Expanded):
 - Subtle hover effects and micro-interactions
 
 ### Content Breakpoints
+
 ```css
 .content-grid {
   display: grid;
@@ -431,6 +478,7 @@ Mobile Layout (Expanded):
 ## Accessibility Specifications
 
 ### Focus Management
+
 ```css
 .focus-visible {
   outline: 2px solid #007acc;
@@ -445,6 +493,7 @@ Mobile Layout (Expanded):
 ```
 
 ### Screen Reader Support
+
 ```css
 .sr-only {
   position: absolute;
@@ -460,6 +509,7 @@ Mobile Layout (Expanded):
 ```
 
 ### High Contrast Support
+
 ```css
 @media (prefers-contrast: high) {
   :root {
@@ -471,6 +521,7 @@ Mobile Layout (Expanded):
 ```
 
 ### Reduced Motion Support
+
 ```css
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -486,13 +537,16 @@ Mobile Layout (Expanded):
 ## Performance Considerations
 
 ### Critical CSS
+
 Inline critical styles for above-the-fold content:
+
 - Header and navigation styles
 - Typography system
 - Layout foundation
 - Loading states
 
 ### Font Loading Strategy
+
 ```css
 @font-face {
   font-family: 'JetBrains Mono';
@@ -503,8 +557,9 @@ Inline critical styles for above-the-fold content:
 ```
 
 ### Image Guidelines
+
 - Use WebP format with JPEG fallbacks
-- Implement lazy loading for below-the-fold images  
+- Implement lazy loading for below-the-fold images
 - Provide appropriate alt text for all images
 - Use CSS for simple graphics and icons when possible
 

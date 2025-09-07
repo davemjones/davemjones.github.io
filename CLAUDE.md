@@ -20,7 +20,9 @@ The repository includes a devcontainer configuration for Node.js & TypeScript de
 ## Common Development Tasks
 
 ### Setting up the site structure
+
 For a basic static site:
+
 ```bash
 # Create main index file
 touch index.html
@@ -36,6 +38,7 @@ touch .nojekyll
 ```
 
 ### Testing locally
+
 ```bash
 # For plain HTML sites
 python3 -m http.server 8000
@@ -47,13 +50,14 @@ bundle exec jekyll serve
 ```
 
 ### Deployment
+
 Changes pushed to the main branch are automatically deployed to GitHub Pages. The deployment typically takes a few minutes.
 
 ## File Structure Recommendations
 
 - `index.html` - Main homepage
 - `css/` - Stylesheets
-- `js/` - JavaScript files  
+- `js/` - JavaScript files
 - `images/` - Image assets
 - `CNAME` - Custom domain configuration (if needed)
 - `.nojekyll` - Add this file if not using Jekyll
