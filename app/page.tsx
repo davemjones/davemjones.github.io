@@ -3,9 +3,9 @@ import JsonLd from '@/components/seo/JsonLd';
 import Image from 'next/image';
 
 export const metadata: Metadata = {
-  title: 'About Me - Dave Jones',
+  title: 'Senior Software Engineer - Dave Jones',
   description:
-    'Learn about Dave Jones, a passionate developer focused on creating elegant solutions.',
+    'Senior software engineer with 15+ years experience building mission-critical applications for Air Force and defense contractors. Expertise in full-stack development, security, and AI integration.',
 };
 
 export default function AboutPage() {
@@ -14,7 +14,7 @@ export default function AboutPage() {
     '@context': 'https://schema.org',
     '@type': 'Person',
     name: 'Dave Jones',
-    jobTitle: 'Software Developer',
+    jobTitle: 'Senior Software Engineer',
     url: 'https://davemjones.github.io',
     sameAs: [
       'https://github.com/davemjones',
@@ -27,11 +27,23 @@ export default function AboutPage() {
       'Next.js',
       'Node.js',
       'Python',
+      'Java',
+      'Spring Framework',
+      '.NET',
+      'Oracle',
+      'SQL',
+      'Azure DevOps',
+      'Software Security',
+      'CSSLP',
+      'Government Systems',
+      'Defense Contracting',
+      'AI Integration',
+      'Legacy System Modernization',
       'Web Development',
       'Software Engineering',
     ],
     description:
-      'Passionate developer who loves building elegant solutions to complex problems.',
+      'Senior software engineer with 15+ years experience building mission-critical applications for Air Force and defense contractors, specializing in security-focused development and AI integration.',
   };
 
   return (
@@ -63,15 +75,21 @@ export default function AboutPage() {
               </div>
               <div className="flex-1">
                 <p className="text-[var(--vscode-text-primary)] leading-relaxed mb-4">
-                  Welcome to my portfolio! I&apos;m a passionate developer who
-                  loves building elegant solutions to complex problems. With a
-                  focus on clean code and user experience, I strive to create
-                  applications that are both powerful and intuitive.
+                  An accomplished software engineer with 15+ years of experience
+                  building mission-critical applications for government and
+                  enterprise clients. Expertise spans full-stack development,
+                  legacy system modernization, and secure software practices,
+                  with a proven track record of leading teams and delivering
+                  high-stakes solutions for Air Force operations and defense
+                  contractors.
                 </p>
                 <p className="text-[var(--vscode-text-secondary)] leading-relaxed">
-                  This site showcases my professional journey, side projects,
-                  and the amazing developers who inspire me to keep learning and
-                  growing.
+                  Currently maintaining Air Force promotion systems for the DoD,
+                  while leading AI integration initiatives within the
+                  development team. Background includes work in cybersecurity,
+                  network defense analysis, and compliance frameworks, bringing
+                  a unique perspective to modern software development
+                  challenges.
                 </p>
               </div>
             </div>
@@ -87,19 +105,23 @@ export default function AboutPage() {
             <ul className="space-y-2 text-[var(--vscode-text-primary)]">
               <li className="flex items-start">
                 <span className="text-[var(--vscode-teal)] mr-2">→</span>
-                Full-stack developer with modern web technologies
+                Senior software engineer with Air Force and defense contractor
+                background
               </li>
               <li className="flex items-start">
                 <span className="text-[var(--vscode-teal)] mr-2">→</span>
-                Passionate about clean code and best practices
+                Technical lead with experience stepping into management roles
+                when needed
               </li>
               <li className="flex items-start">
                 <span className="text-[var(--vscode-teal)] mr-2">→</span>
-                Always learning and exploring new technologies
+                Security-focused developer with CSSLP certification and
+                compliance expertise
               </li>
               <li className="flex items-start">
                 <span className="text-[var(--vscode-teal)] mr-2">→</span>
-                Open source contributor and community advocate
+                Introduced AI integration to development team and presented at
+                government tech conference
               </li>
             </ul>
           </div>
@@ -111,14 +133,21 @@ export default function AboutPage() {
             </h2>
             <div className="flex flex-wrap gap-2">
               {[
+                'React/Redux',
                 'TypeScript',
-                'React',
-                'Next.js',
+                'JavaScript',
+                'Java',
+                'Spring',
+                '.NET',
+                'Oracle',
+                'SQL',
                 'Node.js',
                 'Python',
+                'Azure DevOps',
+                'Checkmarx',
+                'Git',
                 'Docker',
                 'AWS',
-                'Git',
               ].map((tech) => (
                 <span
                   key={tech}
