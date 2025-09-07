@@ -12,7 +12,7 @@ const navItems = [
     href: '/hobbies',
     command: 'cd ~/hobbies',
   },
-  { label: 'People Smarter than Me', href: '/people', command: 'cd ~/people' },
+  { label: 'Inspiring Minds', href: '/people', command: 'cd ~/people' },
 ];
 
 export default function Navigation() {
