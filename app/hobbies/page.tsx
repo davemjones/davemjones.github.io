@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Hobbies & Side Projects - Dave M. Jones',
+  title: 'Hobbies & Side Projects - Dave Jones',
   description:
     'Personal projects and hobbies that fuel my passion for development.',
 };

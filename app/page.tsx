@@ -2,9 +2,9 @@ import { Metadata } from 'next';
 import JsonLd from '@/components/seo/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'About Me - Dave M. Jones',
+  title: 'About Me - Dave Jones',
   description:
-    'Learn about Dave M. Jones, a passionate developer focused on creating elegant solutions.',
+    'Learn about Dave Jones, a passionate developer focused on creating elegant solutions.',
 };
 
 export default function AboutPage() {
@@ -12,7 +12,7 @@ export default function AboutPage() {
   const personSchema = {
     '@context': 'https://schema.org',
     '@type': 'Person',
-    name: 'Dave M. Jones',
+    name: 'Dave Jones',
     jobTitle: 'Software Developer',
     url: 'https://davemjones.github.io',
     sameAs: [
@@ -42,7 +42,7 @@ export default function AboutPage() {
             <span className="text-[var(--vscode-teal)]">const</span>{' '}
             <span className="text-[var(--vscode-blue)]">developer</span>{' '}
             <span className="text-[var(--vscode-text-primary)]">=</span>{' '}
-            <span className="text-[var(--vscode-orange)]">{`"Dave M. Jones"`}</span>
+            <span className="text-[var(--vscode-orange)]">{`"Dave Jones"`}</span>
             ;
           </h1>
 

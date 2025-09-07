@@ -1,8 +1,8 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Experience - Dave M. Jones',
-  description: 'Professional experience and career journey of Dave M. Jones.',
+  title: 'Experience - Dave Jones',
+  description: 'Professional experience and career journey of Dave Jones.',
 };
 
 export default function ExperiencePage() {
