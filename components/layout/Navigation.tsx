@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState, useEffect, useRef } from 'react';
+import { useNavigation } from '@/contexts/NavigationContext';
 
 const navItems = [
   { label: 'About Me', href: '/', fileName: 'about.md', icon: '📝' },
@@ -28,6 +29,7 @@ const navItems = [
 
 export default function Navigation() {
   const pathname = usePathname();
+  const { setHoveredFile } = useNavigation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
   const toggleButtonRef = useRef<HTMLButtonElement>(null);
@@ -88,6 +90,8 @@ export default function Navigation() {
                   `}
                   aria-current={isActive(item.href) ? 'page' : undefined}
                   title={item.label}
+                  onMouseEnter={() => setHoveredFile(item.fileName)}
+                  onMouseLeave={() => setHoveredFile(null)}
                 >
                   <span className="text-base opacity-80">{item.icon}</span>
                   <span
@@ -172,6 +176,8 @@ export default function Navigation() {
                           : 'bg-[var(--vscode-bg-secondary)] text-[var(--vscode-text-primary)]'
                       }
                     `}
+                    onMouseEnter={() => setHoveredFile(item.fileName)}
+                    onMouseLeave={() => setHoveredFile(null)}
                   >
                     <div className="flex items-center gap-3">
                       <span className="text-xl opacity-80">{item.icon}</span>

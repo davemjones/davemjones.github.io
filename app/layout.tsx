@@ -5,6 +5,7 @@ import Navigation from '@/components/layout/Navigation';
 import Footer from '@/components/layout/Footer';
 import SkipNav from '@/components/layout/SkipNav';
 import JsonLd from '@/components/seo/JsonLd';
+import { NavigationProvider } from '@/contexts/NavigationContext';
 
 export const metadata: Metadata = {
   title: 'Dave M. Jones - Portfolio',
@@ -71,17 +72,19 @@ export default function RootLayout({
         <JsonLd data={websiteSchema} />
       </head>
       <body className="min-h-screen flex flex-col">
-        <SkipNav />
-        <Header />
-        <Navigation />
-        <main
-          id="main-content"
-          className="flex-1 container mx-auto px-4 py-8"
-          tabIndex={-1}
-        >
-          {children}
-        </main>
-        <Footer />
+        <NavigationProvider>
+          <SkipNav />
+          <Header />
+          <Navigation />
+          <main
+            id="main-content"
+            className="flex-1 container mx-auto px-4 py-8"
+            tabIndex={-1}
+          >
+            {children}
+          </main>
+          <Footer />
+        </NavigationProvider>
       </body>
     </html>
   );

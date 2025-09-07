@@ -1,11 +1,40 @@
 'use client';
 
-import { usePathname } from 'next/navigation';
+import { useEffect, useState } from 'react';
+import { useNavigation } from '@/contexts/NavigationContext';
 
 export default function Header() {
-  const pathname = usePathname();
+  const { hoveredFile } = useNavigation();
+  const [displayText, setDisplayText] = useState('');
+  const [isTyping, setIsTyping] = useState(false);
 
-  const currentPath = pathname === '/' ? '~/about' : `~${pathname}`;
+  useEffect(() => {
+    if (hoveredFile) {
+      const command = `cat ${hoveredFile}`;
+      setIsTyping(true);
+      setDisplayText('');
+
+      // Typing animation
+      let currentIndex = 0;
+      const typingInterval = setInterval(() => {
+        if (currentIndex < command.length) {
+          setDisplayText(command.substring(0, currentIndex + 1));
+          currentIndex++;
+        } else {
+          clearInterval(typingInterval);
+          setIsTyping(false);
+        }
+      }, 50); // Typing speed
+
+      return () => {
+        clearInterval(typingInterval);
+      };
+    } else {
+      // Clear text when not hovering
+      setDisplayText('');
+      setIsTyping(false);
+    }
+  }, [hoveredFile]);
 
   return (
     <header className="border-b border-[var(--vscode-border-primary)] bg-[var(--vscode-bg-primary)] sticky top-0 z-50">
@@ -15,9 +44,16 @@ export default function Header() {
             dave@portfolio
           </span>
           <span className="text-[var(--vscode-text-secondary)]">:</span>
-          <span className="text-[var(--vscode-blue)]">{currentPath}</span>
+          <span className="text-[var(--vscode-blue)]">~/</span>
           <span className="text-[var(--vscode-text-primary)]">$</span>
-          <span className="inline-block w-2 h-4 bg-[var(--vscode-text-primary)] animate-cursor-blink ml-1"></span>
+          {displayText && (
+            <span className="text-[var(--vscode-text-primary)] ml-2">
+              {displayText}
+            </span>
+          )}
+          <span
+            className={`inline-block w-2 h-4 bg-[var(--vscode-text-primary)] ${isTyping ? 'animate-none' : 'animate-cursor-blink'} ml-1`}
+          ></span>
         </div>
       </div>
     </header>
