@@ -8,24 +8,28 @@ This document outlines the technical implementation details for the Portfolio La
 ## Technology Stack
 
 ### Core Framework
+
 - **Next.js**: 15.5.2 with App Router
 - **React**: 19.1.0 with TypeScript
 - **TypeScript**: Latest stable version
 - **Node.js**: 18.x or higher
 
 ### Styling and UI
+
 - **Tailwind CSS**: 4.x (latest)
 - **PostCSS**: For CSS processing
 - **Autoprefixer**: Browser compatibility
 - **Custom CSS**: Minimal, component-specific overrides
 
 ### Development Tools
+
 - **ESLint**: Code quality and consistency
 - **Prettier**: Code formatting
 - **Husky**: Git hooks for code quality
 - **TypeScript**: Type checking and IDE support
 
 ### Deployment
+
 - **GitHub Pages**: Static site hosting
 - **GitHub Actions**: CI/CD pipeline
 - **Next.js Static Export**: Static file generation
@@ -33,6 +37,7 @@ This document outlines the technical implementation details for the Portfolio La
 ## Architecture Overview
 
 ### Project Structure
+
 ```
 /
 ├── app/                          # Next.js App Router
@@ -67,6 +72,7 @@ This document outlines the technical implementation details for the Portfolio La
 #### Layout Components
 
 **Header Component**
+
 ```typescript
 interface HeaderProps {
   currentSection: string;
@@ -77,13 +83,14 @@ interface HeaderProps {
 export const Header: React.FC<HeaderProps> = ({
   currentSection,
   isMenuOpen,
-  onMenuToggle
+  onMenuToggle,
 }) => {
   // Terminal-style header with navigation
 };
 ```
 
 **Navigation Component**
+
 ```typescript
 interface NavigationItem {
   id: string;
@@ -101,13 +108,14 @@ interface NavigationProps {
 export const Navigation: React.FC<NavigationProps> = ({
   items,
   currentPath,
-  className
+  className,
 }) => {
   // Horizontal navigation with active states
 };
 ```
 
 **Terminal Component**
+
 ```typescript
 interface TerminalProps {
   prompt?: string;
@@ -117,10 +125,10 @@ interface TerminalProps {
 }
 
 export const Terminal: React.FC<TerminalProps> = ({
-  prompt = "dave@portfolio:~$",
+  prompt = 'dave@portfolio:~$',
   children,
   className,
-  showCursor = false
+  showCursor = false,
 }) => {
   // Terminal window wrapper component
 };
@@ -129,6 +137,7 @@ export const Terminal: React.FC<TerminalProps> = ({
 ### State Management
 
 #### Navigation State
+
 ```typescript
 interface NavigationState {
   currentSection: string;
@@ -144,6 +153,7 @@ export const NavigationContext = React.createContext<{
 ```
 
 #### Theme State
+
 ```typescript
 interface ThemeState {
   isDark: boolean; // Always true for VSCode theme
@@ -158,12 +168,14 @@ interface ThemeState {
 ### Routing Strategy
 
 #### App Router Implementation
+
 - **Home Route** (`/`): About Me section
 - **Experience Route** (`/experience`): Professional background
 - **Hobbies Route** (`/hobbies`): Personal projects and interests
 - **People Route** (`/people`): Curated resources and inspirations
 
 #### Dynamic Imports
+
 ```typescript
 // Lazy load section components for performance
 const ExperienceSection = dynamic(() => import('@/components/sections/Experience'), {
@@ -175,6 +187,7 @@ const ExperienceSection = dynamic(() => import('@/components/sections/Experience
 ### Styling Implementation
 
 #### Tailwind Configuration
+
 ```javascript
 // tailwind.config.js
 module.exports = {
@@ -199,7 +212,7 @@ module.exports = {
           green: '#608b4e',
           purple: '#c586c0',
           orange: '#ce9178',
-        }
+        },
       },
       fontFamily: {
         mono: [
@@ -208,8 +221,8 @@ module.exports = {
           'SF Mono',
           'Monaco',
           'Inconsolata',
-          'monospace'
-        ]
+          'monospace',
+        ],
       },
       animation: {
         'cursor-blink': 'cursor-blink 1s infinite',
@@ -229,14 +242,15 @@ module.exports = {
           '0%': { transform: 'translateY(10px)', opacity: '0' },
           '100%': { transform: 'translateY(0)', opacity: '1' },
         },
-      }
+      },
     },
   },
   plugins: [],
-}
+};
 ```
 
 #### CSS Custom Properties
+
 ```css
 :root {
   --vscode-bg: #1e1e1e;
@@ -251,24 +265,27 @@ module.exports = {
 ### Performance Optimization
 
 #### Code Splitting
+
 - Route-based code splitting using Next.js dynamic imports
 - Component-level splitting for large UI components
 - Lazy loading for non-critical sections
 
 #### Image Optimization
+
 - Next.js Image component for automatic optimization
 - WebP format with fallbacks
 - Responsive image loading
 - Lazy loading for below-the-fold content
 
 #### Bundle Optimization
+
 ```javascript
 // next.config.js
 const nextConfig = {
   output: 'export',
   trailingSlash: true,
   images: {
-    unoptimized: true // Required for static export
+    unoptimized: true, // Required for static export
   },
   experimental: {
     optimizeCss: true,
@@ -292,6 +309,7 @@ const nextConfig = {
 ### SEO Implementation
 
 #### Meta Tags Strategy
+
 ```typescript
 // app/layout.tsx
 export const metadata: Metadata = {
@@ -299,7 +317,8 @@ export const metadata: Metadata = {
     template: '%s | Dave M. Jones',
     default: 'Dave M. Jones | Developer Portfolio',
   },
-  description: 'Portfolio showcasing development expertise, projects, and curated resources from the developer community.',
+  description:
+    'Portfolio showcasing development expertise, projects, and curated resources from the developer community.',
   keywords: ['developer', 'portfolio', 'React', 'Next.js', 'TypeScript'],
   authors: [{ name: 'Dave M. Jones' }],
   creator: 'Dave M. Jones',
@@ -325,22 +344,24 @@ export const metadata: Metadata = {
 ```
 
 #### Structured Data
+
 ```typescript
 const structuredData = {
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Dave M. Jones",
-  "jobTitle": "Software Developer",
-  "url": "https://davemjones.github.io",
-  "sameAs": [
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Dave M. Jones',
+  jobTitle: 'Software Developer',
+  url: 'https://davemjones.github.io',
+  sameAs: [
     // Social media profiles
-  ]
+  ],
 };
 ```
 
 ### Accessibility Implementation
 
 #### Semantic HTML
+
 ```typescript
 // Proper heading hierarchy
 const SectionHeading: React.FC<{ level: 1 | 2 | 3; children: React.ReactNode }> = ({
@@ -353,6 +374,7 @@ const SectionHeading: React.FC<{ level: 1 | 2 | 3; children: React.ReactNode }> 
 ```
 
 #### Keyboard Navigation
+
 ```typescript
 const Navigation: React.FC = () => {
   const handleKeyDown = (e: React.KeyboardEvent) => {
@@ -371,6 +393,7 @@ const Navigation: React.FC = () => {
 ```
 
 #### Screen Reader Support
+
 ```typescript
 // Live regions for dynamic content updates
 <div aria-live="polite" aria-atomic="true" className="sr-only">
@@ -381,16 +404,19 @@ const Navigation: React.FC = () => {
 ### Testing Strategy
 
 #### Unit Testing
+
 - Jest for component testing
 - React Testing Library for DOM testing
 - TypeScript type checking
 
 #### Integration Testing
+
 - Cypress for end-to-end testing
 - Accessibility testing with axe-core
 - Performance testing with Lighthouse CI
 
 #### Manual Testing
+
 - Cross-browser compatibility testing
 - Mobile device testing
 - Screen reader testing
@@ -398,12 +424,13 @@ const Navigation: React.FC = () => {
 ### Deployment Configuration
 
 #### GitHub Actions Workflow
+
 ```yaml
 name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   build-and-deploy:
@@ -422,6 +449,7 @@ jobs:
 ```
 
 #### Build Configuration
+
 ```json
 {
   "scripts": {
@@ -438,25 +466,28 @@ jobs:
 ### Security Considerations
 
 #### Content Security Policy
+
 ```typescript
 // next.config.js security headers
 const securityHeaders = [
   {
     key: 'Content-Security-Policy',
-    value: "default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline';"
+    value:
+      "default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline';",
   },
   {
     key: 'X-Frame-Options',
-    value: 'DENY'
+    value: 'DENY',
   },
   {
     key: 'X-Content-Type-Options',
-    value: 'nosniff'
-  }
+    value: 'nosniff',
+  },
 ];
 ```
 
 #### Dependency Management
+
 - Regular dependency updates using Dependabot
 - Security auditing with npm audit
 - Minimal external dependencies to reduce attack surface

@@ -1,7 +1,7 @@
 # Product Roadmap
 
-> Last Updated: 2025-09-06
-> Version: 1.0.0
+> Last Updated: 2025-09-07
+> Version: 1.1.0
 > Status: Development
 
 ## Phase 0: Project Initialization (Completed)
@@ -67,10 +67,10 @@
 
 ### Features
 
-- [ ] Performance optimization and loading improvements `M`
+- [x] Performance optimization and loading improvements `M`
 - [x] SEO optimization and meta tags `S`
-- [ ] Mobile experience refinement `M`
-- [ ] Accessibility improvements (WCAG compliance) `L`
+- [x] Mobile experience refinement `M`
+- [x] Accessibility improvements (WCAG compliance) `L`
 
 ### Dependencies
 
