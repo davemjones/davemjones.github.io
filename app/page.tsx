@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import JsonLd from '@/components/seo/JsonLd';
+import Image from 'next/image';
 
 export const metadata: Metadata = {
   title: 'About Me - Dave Jones',
@@ -47,17 +48,33 @@ export default function AboutPage() {
           </h1>
 
           <div className="bg-[var(--vscode-bg-secondary)] border border-[var(--vscode-border-primary)] rounded p-6 mb-6">
-            <p className="text-[var(--vscode-text-primary)] leading-relaxed mb-4">
-              Welcome to my portfolio! I&apos;m a passionate developer who loves
-              building elegant solutions to complex problems. With a focus on
-              clean code and user experience, I strive to create applications
-              that are both powerful and intuitive.
-            </p>
-            <p className="text-[var(--vscode-text-secondary)] leading-relaxed">
-              This site showcases my professional journey, side projects, and
-              the amazing developers who inspire me to keep learning and
-              growing.
-            </p>
+            <div className="flex flex-col md:flex-row md:items-start gap-6">
+              <div className="flex-shrink-0">
+                <div className="w-32 h-32 md:w-40 md:h-40 rounded-full border-2 border-[var(--vscode-border-light)] hover:border-[var(--vscode-blue)] transition-colors overflow-hidden">
+                  <Image
+                    src="/profile.jpg"
+                    alt="Dave Jones - Software Developer"
+                    width={160}
+                    height={160}
+                    className="w-full h-full object-cover object-top"
+                    priority
+                  />
+                </div>
+              </div>
+              <div className="flex-1">
+                <p className="text-[var(--vscode-text-primary)] leading-relaxed mb-4">
+                  Welcome to my portfolio! I&apos;m a passionate developer who
+                  loves building elegant solutions to complex problems. With a
+                  focus on clean code and user experience, I strive to create
+                  applications that are both powerful and intuitive.
+                </p>
+                <p className="text-[var(--vscode-text-secondary)] leading-relaxed">
+                  This site showcases my professional journey, side projects,
+                  and the amazing developers who inspire me to keep learning and
+                  growing.
+                </p>
+              </div>
+            </div>
           </div>
         </section>
 
