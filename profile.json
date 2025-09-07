@@ -1,0 +1,16 @@
+{
+  "name": "Dave M. Jones",
+  "title": "Software Developer",
+  "email": "davemjones@gmail.com",
+  "github": {
+    "username": "davemjones",
+    "url": "https://github.com/davemjones"
+  },
+  "linkedin": {
+    "username": "david-jones99",
+    "url": "https://www.linkedin.com/in/david-jones99/"
+  },
+  "website": "https://davemjones.github.io",
+  "location": "Dallas, Texas",
+  "bio": "Portfolio showcasing development expertise, projects, and curated resources from the developer community."
+}
