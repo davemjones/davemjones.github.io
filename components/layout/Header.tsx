@@ -42,7 +42,7 @@ export default function Header() {
       <div className="container mx-auto px-4 h-16 md:h-[72px] flex items-center justify-between">
         <div className="flex items-center space-x-2 font-mono text-sm md:text-base">
           <span className="text-[var(--vscode-teal)] font-semibold">
-            dave@portfolio
+            dave@profile
           </span>
           <span className="text-[var(--vscode-text-secondary)]">:</span>
           <span className="text-[var(--vscode-blue)]">~/</span>
