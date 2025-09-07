@@ -1,18 +1,11 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 
 export default function Header() {
-  const [currentPath, setCurrentPath] = useState('~');
+  const pathname = usePathname();
 
-  useEffect(() => {
-    const path = window.location.pathname;
-    if (path === '/') {
-      setCurrentPath('~/about');
-    } else {
-      setCurrentPath(`~${path}`);
-    }
-  }, []);
+  const currentPath = pathname === '/' ? '~/about' : `~${pathname}`;
 
   return (
     <header className="border-b border-[var(--vscode-border-primary)] bg-[var(--vscode-bg-primary)] sticky top-0 z-50">
