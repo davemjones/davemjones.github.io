@@ -5,18 +5,18 @@ import Navigation from '@/components/layout/Navigation';
 import Footer from '@/components/layout/Footer';
 import SkipNav from '@/components/layout/SkipNav';
 import JsonLd from '@/components/seo/JsonLd';
+import { NavigationProvider } from '@/contexts/NavigationContext';
+import { profile } from '@/lib/profile';
 
 export const metadata: Metadata = {
-  title: 'Dave M. Jones - Portfolio',
-  description:
-    'Portfolio showcasing development expertise, projects, and curated resources from the developer community.',
+  title: `${profile.name} - Portfolio`,
+  description: profile.bio,
   keywords: ['developer', 'portfolio', 'React', 'Next.js', 'TypeScript'],
-  authors: [{ name: 'Dave M. Jones' }],
-  creator: 'Dave M. Jones',
+  authors: [{ name: profile.name }],
+  creator: profile.name,
   openGraph: {
-    title: 'Dave M. Jones - Portfolio',
-    description:
-      'Portfolio showcasing development expertise, projects, and curated resources from the developer community.',
+    title: `${profile.name} - Portfolio`,
+    description: profile.bio,
     type: 'website',
     locale: 'en_US',
   },
@@ -49,19 +49,18 @@ export default function RootLayout({
   const websiteSchema = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    name: 'Dave M. Jones - Portfolio',
-    url: 'https://davemjones.github.io',
-    description:
-      'Portfolio showcasing development expertise, projects, and curated resources from the developer community.',
+    name: `${profile.name} - Portfolio`,
+    url: profile.website,
+    description: profile.bio,
     author: {
       '@type': 'Person',
-      name: 'Dave M. Jones',
-      jobTitle: 'Software Developer',
-      url: 'https://davemjones.github.io',
+      name: profile.name,
+      jobTitle: profile.title,
+      url: profile.website,
     },
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': 'https://davemjones.github.io',
+      '@id': profile.website,
     },
   };
 
@@ -71,17 +70,19 @@ export default function RootLayout({
         <JsonLd data={websiteSchema} />
       </head>
       <body className="min-h-screen flex flex-col">
-        <SkipNav />
-        <Header />
-        <Navigation />
-        <main
-          id="main-content"
-          className="flex-1 container mx-auto px-4 py-8"
-          tabIndex={-1}
-        >
-          {children}
-        </main>
-        <Footer />
+        <NavigationProvider>
+          <SkipNav />
+          <Header />
+          <Navigation />
+          <main
+            id="main-content"
+            className="flex-1 container mx-auto px-4 py-8"
+            tabIndex={-1}
+          >
+            {children}
+          </main>
+          <Footer />
+        </NavigationProvider>
       </body>
     </html>
   );

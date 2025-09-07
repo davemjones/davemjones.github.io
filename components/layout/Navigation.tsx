@@ -3,20 +3,33 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState, useEffect, useRef } from 'react';
+import { useNavigation } from '@/contexts/NavigationContext';
 
 const navItems = [
-  { label: 'About Me', href: '/', command: 'cd ~/about' },
-  { label: 'Experience', href: '/experience', command: 'cd ~/experience' },
+  { label: 'About Me', href: '/', fileName: 'about.md', icon: '📝' },
+  {
+    label: 'Experience',
+    href: '/experience',
+    fileName: 'experience.tsx',
+    icon: '⚛️',
+  },
   {
     label: 'Hobbies & Side Projects',
     href: '/hobbies',
-    command: 'cd ~/hobbies',
+    fileName: 'hobbies.json',
+    icon: '📦',
   },
-  { label: 'People Smarter than Me', href: '/people', command: 'cd ~/people' },
+  {
+    label: 'Inspiring Minds',
+    href: '/people',
+    fileName: 'people.yml',
+    icon: '👥',
+  },
 ];
 
 export default function Navigation() {
   const pathname = usePathname();
+  const { setHoveredFile } = useNavigation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
   const toggleButtonRef = useRef<HTMLButtonElement>(null);
@@ -55,32 +68,51 @@ export default function Navigation() {
 
   return (
     <>
-      {/* Desktop Navigation */}
+      {/* Desktop Navigation - VSCode File Tabs */}
       <nav
         className="hidden md:block border-b border-[var(--vscode-border-primary)] bg-[var(--vscode-bg-secondary)]"
         aria-label="Main navigation"
       >
         <div className="container mx-auto px-4">
-          <ul className="flex space-x-1" role="list">
+          <ul className="flex" role="list">
             {navItems.map((item) => (
-              <li key={item.href}>
+              <li key={item.href} className="relative">
                 <Link
                   href={item.href}
                   className={`
-                    block px-4 py-3 font-mono text-sm transition-all
-                    hover:bg-[var(--vscode-bg-hover)]
+                    group flex items-center gap-2 px-4 py-2.5 font-mono text-sm transition-all
+                    border-r border-[var(--vscode-border-primary)]
                     ${
                       isActive(item.href)
-                        ? 'text-[var(--vscode-blue)] border-b-2 border-[var(--vscode-blue)] bg-[var(--vscode-bg-tertiary)]'
-                        : 'text-[var(--vscode-text-primary)] border-b-2 border-transparent'
+                        ? 'bg-[var(--vscode-bg-primary)] text-[var(--vscode-text-primary)] border-t-2 border-t-[var(--vscode-blue)]'
+                        : 'bg-[var(--vscode-bg-tertiary)] text-[var(--vscode-text-secondary)] hover:bg-[var(--vscode-bg-secondary)] border-t-2 border-t-transparent'
                     }
                   `}
                   aria-current={isActive(item.href) ? 'page' : undefined}
+                  title={item.label}
+                  onMouseEnter={() => setHoveredFile(item.fileName)}
+                  onMouseLeave={() => setHoveredFile(null)}
                 >
-                  <span className="text-[var(--vscode-text-disabled)]">$ </span>
-                  <span className="hover:text-[var(--vscode-blue)]">
-                    {item.command}
+                  <span className="text-base opacity-80">{item.icon}</span>
+                  <span
+                    className={`${isActive(item.href) ? '' : 'italic opacity-90'}`}
+                  >
+                    {item.fileName}
                   </span>
+                  {isActive(item.href) && (
+                    <span className="ml-1 w-2 h-2 rounded-full bg-white opacity-80"></span>
+                  )}
+                  {!isActive(item.href) && (
+                    <button
+                      className="ml-2 opacity-0 group-hover:opacity-60 hover:!opacity-100 transition-opacity"
+                      aria-label={`Close ${item.label} tab`}
+                      onClick={(e) => {
+                        e.preventDefault();
+                      }}
+                    >
+                      ×
+                    </button>
+                  )}
                 </Link>
               </li>
             ))}
@@ -129,32 +161,41 @@ export default function Navigation() {
             Site Navigation
           </h2>
           <nav aria-label="Main navigation">
-            <ul className="space-y-4">
+            <ul className="space-y-3">
               {navItems.map((item) => (
                 <li key={item.href}>
                   <Link
                     href={item.href}
                     onClick={() => setMobileMenuOpen(false)}
                     className={`
-                      block p-4 font-mono text-lg border border-[var(--vscode-border-primary)] rounded
+                      block p-4 font-mono text-base border border-[var(--vscode-border-primary)] rounded-lg
                       transition-all hover:bg-[var(--vscode-bg-secondary)]
                       ${
                         isActive(item.href)
-                          ? 'bg-[var(--vscode-bg-tertiary)] text-[var(--vscode-blue)] border-[var(--vscode-blue)]'
-                          : 'text-[var(--vscode-text-primary)]'
+                          ? 'bg-[var(--vscode-bg-tertiary)] border-[var(--vscode-blue)]'
+                          : 'bg-[var(--vscode-bg-secondary)] text-[var(--vscode-text-primary)]'
                       }
                     `}
+                    onMouseEnter={() => setHoveredFile(item.fileName)}
+                    onMouseLeave={() => setHoveredFile(null)}
                   >
-                    <div className="flex items-center">
-                      <span className="text-[var(--vscode-text-disabled)] mr-2">
-                        $
-                      </span>
-                      <span className="text-[var(--vscode-teal)] mr-2">
-                        {item.command}
-                      </span>
-                    </div>
-                    <div className="text-sm text-[var(--vscode-text-secondary)] mt-1 ml-4">
-                      → {item.label}
+                    <div className="flex items-center gap-3">
+                      <span className="text-xl opacity-80">{item.icon}</span>
+                      <div className="flex-1">
+                        <div className="flex items-center gap-2">
+                          <span
+                            className={`${isActive(item.href) ? 'text-[var(--vscode-blue)]' : 'text-[var(--vscode-text-secondary)] italic'}`}
+                          >
+                            {item.fileName}
+                          </span>
+                          {isActive(item.href) && (
+                            <span className="w-2 h-2 rounded-full bg-[var(--vscode-blue)] opacity-80"></span>
+                          )}
+                        </div>
+                        <div className="text-xs text-[var(--vscode-text-disabled)] mt-1">
+                          {item.label}
+                        </div>
+                      </div>
                     </div>
                   </Link>
                 </li>
