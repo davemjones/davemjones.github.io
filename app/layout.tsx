@@ -14,6 +14,11 @@ export const metadata: Metadata = {
   keywords: ['developer', 'portfolio', 'React', 'Next.js', 'TypeScript'],
   authors: [{ name: profile.name }],
   creator: profile.name,
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+    apple: '/favicon.ico',
+  },
   openGraph: {
     title: `${profile.name} - Portfolio`,
     description: profile.bio,

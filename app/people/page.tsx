@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'People Smarter than Me - Dave M. Jones',
+  title: 'People Smarter than Me - Dave Jones',
   description:
     'Amazing developers and thought leaders who inspire me to keep learning.',
 };
