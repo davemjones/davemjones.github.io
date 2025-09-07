@@ -35,7 +35,10 @@ export default function Navigation() {
   const toggleButtonRef = useRef<HTMLButtonElement>(null);
 
   const isActive = (href: string) => {
-    return pathname === href;
+    if (href === '/') {
+      return pathname === '/';
+    }
+    return pathname.startsWith(href);
   };
 
   // Handle focus trap and keyboard navigation
