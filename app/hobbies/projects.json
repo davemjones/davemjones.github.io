@@ -1,0 +1,16 @@
+[
+  {
+    "projectName": "AI Retrospective",
+    "summary": "An AI-powered retrospective tool built with Next.js, Socket.io, and PostgreSQL. Designed to break the cycle of recurring team issues by leveraging AI to identify patterns across retrospectives, surface root causes, and suggest innovative solutions that actually drive change.",
+    "techTags": [
+      "PostgreSQL",
+      "Node.js",
+      "Socket.io",
+      "Next.js",
+      "TypeScript",
+      "Docker",
+      "Claude"
+    ],
+    "url": "https://github.com/davemjones/retro-ai"
+  }
+]

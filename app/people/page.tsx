@@ -1,4 +1,7 @@
 import { Metadata } from 'next';
+import BaseCard from '@/components/ui/BaseCard';
+import CodeHeader from '@/components/ui/CodeHeader';
+import ActionLink from '@/components/ui/ActionLink';
 
 export const metadata: Metadata = {
   title: 'People Smarter than Me - Dave Jones',
@@ -10,32 +13,35 @@ export default function PeoplePage() {
   return (
     <div className="animate-fade-in">
       <section className="mb-8">
-        <h1 className="text-3xl md:text-4xl font-bold text-[var(--vscode-text-primary)] mb-4 font-mono">
-          <span className="text-[var(--vscode-teal)]">import</span>{' '}
-          <span className="text-[var(--vscode-text-primary)]">{'{'}</span>{' '}
-          <span className="text-[var(--vscode-blue)]">inspiration</span>{' '}
-          <span className="text-[var(--vscode-text-primary)]">{'}'}</span>{' '}
-          <span className="text-[var(--vscode-teal)]">from</span>{' '}
-          <span className="text-[var(--vscode-orange)]">{`'./amazing-people'`}</span>
-          ;
-        </h1>
+        <CodeHeader
+          syntax={[
+            { text: 'import', color: 'teal' },
+            { text: ' { ', color: 'text-primary' },
+            { text: 'inspiration', color: 'blue' },
+            { text: ' } ', color: 'text-primary' },
+            { text: 'from', color: 'teal' },
+            { text: ' ', color: 'text-primary' },
+            { text: "'./amazing-people'", color: 'orange' },
+            { text: ';', color: 'text-primary' },
+          ]}
+        />
 
-        <div className="bg-[var(--vscode-bg-secondary)] border border-[var(--vscode-border-primary)] rounded p-6 mb-6">
+        <BaseCard className="mb-6" hover={false}>
           <p className="text-[var(--vscode-text-primary)] leading-relaxed">
             The tech community is filled with brilliant minds who share their
             knowledge generously. Here are some of the developers, thought
             leaders, and creators who inspire me to keep learning and pushing
             boundaries.
           </p>
-        </div>
+        </BaseCard>
       </section>
 
       <section className="grid md:grid-cols-2 gap-6">
         {/* Person 1 */}
-        <div className="bg-[var(--vscode-bg-secondary)] border border-[var(--vscode-border-primary)] rounded p-6 hover:border-[var(--vscode-blue)] transition-colors">
-          <h2 className="text-xl font-semibold text-[var(--vscode-blue)] mb-2 font-mono">
+        <BaseCard>
+          <CodeHeader level="h2" className="mb-2">
             Kent C. Dodds
-          </h2>
+          </CodeHeader>
           <p className="text-[var(--vscode-teal)] text-sm mb-3 font-mono">
             @kentcdodds
           </p>
@@ -44,30 +50,20 @@ export default function PeoplePage() {
             testing and teaching has transformed how I think about code quality.
           </p>
           <div className="flex gap-3">
-            <a
-              href="https://kentcdodds.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[var(--vscode-blue)] hover:text-[var(--vscode-blue-hover)] text-sm font-mono"
-            >
-              Website →
-            </a>
-            <a
-              href="https://twitter.com/kentcdodds"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[var(--vscode-blue)] hover:text-[var(--vscode-blue-hover)] text-sm font-mono"
-            >
-              Twitter →
-            </a>
+            <ActionLink href="https://kentcdodds.com" external>
+              Website
+            </ActionLink>
+            <ActionLink href="https://twitter.com/kentcdodds" external>
+              Twitter
+            </ActionLink>
           </div>
-        </div>
+        </BaseCard>
 
         {/* Person 2 */}
-        <div className="bg-[var(--vscode-bg-secondary)] border border-[var(--vscode-border-primary)] rounded p-6 hover:border-[var(--vscode-blue)] transition-colors">
-          <h2 className="text-xl font-semibold text-[var(--vscode-blue)] mb-2 font-mono">
+        <BaseCard>
+          <CodeHeader level="h2" className="mb-2">
             Dan Abramov
-          </h2>
+          </CodeHeader>
           <p className="text-[var(--vscode-teal)] text-sm mb-3 font-mono">
             @dan_abramov
           </p>
@@ -77,30 +73,20 @@ export default function PeoplePage() {
             development.
           </p>
           <div className="flex gap-3">
-            <a
-              href="https://overreacted.io"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[var(--vscode-blue)] hover:text-[var(--vscode-blue-hover)] text-sm font-mono"
-            >
-              Blog →
-            </a>
-            <a
-              href="https://twitter.com/dan_abramov"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[var(--vscode-blue)] hover:text-[var(--vscode-blue-hover)] text-sm font-mono"
-            >
-              Twitter →
-            </a>
+            <ActionLink href="https://overreacted.io" external>
+              Blog
+            </ActionLink>
+            <ActionLink href="https://twitter.com/dan_abramov" external>
+              Twitter
+            </ActionLink>
           </div>
-        </div>
+        </BaseCard>
 
         {/* Person 3 */}
-        <div className="bg-[var(--vscode-bg-secondary)] border border-[var(--vscode-border-primary)] rounded p-6 hover:border-[var(--vscode-blue)] transition-colors">
-          <h2 className="text-xl font-semibold text-[var(--vscode-blue)] mb-2 font-mono">
+        <BaseCard>
+          <CodeHeader level="h2" className="mb-2">
             Sarah Drasner
-          </h2>
+          </CodeHeader>
           <p className="text-[var(--vscode-teal)] text-sm mb-3 font-mono">
             @sarah_edo
           </p>
@@ -109,30 +95,20 @@ export default function PeoplePage() {
             Vue.js, and developer tooling has been incredibly influential.
           </p>
           <div className="flex gap-3">
-            <a
-              href="https://sarahdrasnerdesign.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[var(--vscode-blue)] hover:text-[var(--vscode-blue-hover)] text-sm font-mono"
-            >
-              Website →
-            </a>
-            <a
-              href="https://twitter.com/sarah_edo"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[var(--vscode-blue)] hover:text-[var(--vscode-blue-hover)] text-sm font-mono"
-            >
-              Twitter →
-            </a>
+            <ActionLink href="https://sarahdrasnerdesign.com" external>
+              Website
+            </ActionLink>
+            <ActionLink href="https://twitter.com/sarah_edo" external>
+              Twitter
+            </ActionLink>
           </div>
-        </div>
+        </BaseCard>
 
         {/* Person 4 */}
-        <div className="bg-[var(--vscode-bg-secondary)] border border-[var(--vscode-border-primary)] rounded p-6 hover:border-[var(--vscode-blue)] transition-colors">
-          <h2 className="text-xl font-semibold text-[var(--vscode-blue)] mb-2 font-mono">
+        <BaseCard>
+          <CodeHeader level="h2" className="mb-2">
             Addy Osmani
-          </h2>
+          </CodeHeader>
           <p className="text-[var(--vscode-teal)] text-sm mb-3 font-mono">
             @addyosmani
           </p>
@@ -142,30 +118,20 @@ export default function PeoplePage() {
             practices.
           </p>
           <div className="flex gap-3">
-            <a
-              href="https://addyosmani.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[var(--vscode-blue)] hover:text-[var(--vscode-blue-hover)] text-sm font-mono"
-            >
-              Website →
-            </a>
-            <a
-              href="https://twitter.com/addyosmani"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[var(--vscode-blue)] hover:text-[var(--vscode-blue-hover)] text-sm font-mono"
-            >
-              Twitter →
-            </a>
+            <ActionLink href="https://addyosmani.com" external>
+              Website
+            </ActionLink>
+            <ActionLink href="https://twitter.com/addyosmani" external>
+              Twitter
+            </ActionLink>
           </div>
-        </div>
+        </BaseCard>
 
         {/* Person 5 */}
-        <div className="bg-[var(--vscode-bg-secondary)] border border-[var(--vscode-border-primary)] rounded p-6 hover:border-[var(--vscode-blue)] transition-colors">
-          <h2 className="text-xl font-semibold text-[var(--vscode-blue)] mb-2 font-mono">
+        <BaseCard>
+          <CodeHeader level="h2" className="mb-2">
             Wes Bos
-          </h2>
+          </CodeHeader>
           <p className="text-[var(--vscode-teal)] text-sm mb-3 font-mono">
             @wesbos
           </p>
@@ -174,30 +140,20 @@ export default function PeoplePage() {
             helped countless developers level up their skills.
           </p>
           <div className="flex gap-3">
-            <a
-              href="https://wesbos.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[var(--vscode-blue)] hover:text-[var(--vscode-blue-hover)] text-sm font-mono"
-            >
-              Website →
-            </a>
-            <a
-              href="https://twitter.com/wesbos"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[var(--vscode-blue)] hover:text-[var(--vscode-blue-hover)] text-sm font-mono"
-            >
-              Twitter →
-            </a>
+            <ActionLink href="https://wesbos.com" external>
+              Website
+            </ActionLink>
+            <ActionLink href="https://twitter.com/wesbos" external>
+              Twitter
+            </ActionLink>
           </div>
-        </div>
+        </BaseCard>
 
         {/* Person 6 */}
-        <div className="bg-[var(--vscode-bg-secondary)] border border-[var(--vscode-border-primary)] rounded p-6 hover:border-[var(--vscode-blue)] transition-colors">
-          <h2 className="text-xl font-semibold text-[var(--vscode-blue)] mb-2 font-mono">
+        <BaseCard>
+          <CodeHeader level="h2" className="mb-2">
             Cassidy Williams
-          </h2>
+          </CodeHeader>
           <p className="text-[var(--vscode-teal)] text-sm mb-3 font-mono">
             @cassidoo
           </p>
@@ -206,39 +162,33 @@ export default function PeoplePage() {
             advocacy work inspire developers worldwide.
           </p>
           <div className="flex gap-3">
-            <a
-              href="https://cassidoo.co"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[var(--vscode-blue)] hover:text-[var(--vscode-blue-hover)] text-sm font-mono"
-            >
-              Website →
-            </a>
-            <a
-              href="https://twitter.com/cassidoo"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[var(--vscode-blue)] hover:text-[var(--vscode-blue-hover)] text-sm font-mono"
-            >
-              Twitter →
-            </a>
+            <ActionLink href="https://cassidoo.co" external>
+              Website
+            </ActionLink>
+            <ActionLink href="https://twitter.com/cassidoo" external>
+              Twitter
+            </ActionLink>
           </div>
-        </div>
+        </BaseCard>
       </section>
 
       <section className="mt-8">
-        <div className="bg-[var(--vscode-bg-secondary)] border border-[var(--vscode-border-primary)] rounded p-6">
-          <h2 className="text-xl font-semibold text-[var(--vscode-blue)] mb-3 font-mono">
-            <span className="text-[var(--vscode-text-disabled)]">{'//'}</span>{' '}
-            And Many More...
-          </h2>
+        <BaseCard hover={false}>
+          <CodeHeader
+            level="h2"
+            syntax={[
+              { text: '//', color: 'text-disabled' },
+              { text: ' And Many More...', color: 'text-primary' },
+            ]}
+            className="mb-3"
+          />
           <p className="text-[var(--vscode-text-primary)]">
             This is just a small sample of the amazing people in our community.
             Every day, I learn from developers on Twitter, GitHub, Stack
             Overflow, and in countless blog posts and tutorials. Thank you all
             for sharing your knowledge and making the web a better place! 🙏
           </p>
-        </div>
+        </BaseCard>
       </section>
     </div>
   );

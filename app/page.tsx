@@ -1,6 +1,10 @@
 import { Metadata } from 'next';
 import JsonLd from '@/components/seo/JsonLd';
 import Image from 'next/image';
+import BaseCard from '@/components/ui/BaseCard';
+import TechTag from '@/components/ui/TechTag';
+import CodeHeader from '@/components/ui/CodeHeader';
+import BulletList from '@/components/ui/BulletList';
 
 export const metadata: Metadata = {
   title: 'Senior Software Engineer - Dave Jones',
@@ -51,15 +55,18 @@ export default function AboutPage() {
       <JsonLd data={personSchema} />
       <div className="animate-fade-in">
         <section className="mb-8">
-          <h1 className="text-3xl md:text-4xl font-bold text-[var(--vscode-text-primary)] mb-4 font-mono">
-            <span className="text-[var(--vscode-teal)]">const</span>{' '}
-            <span className="text-[var(--vscode-blue)]">developer</span>{' '}
-            <span className="text-[var(--vscode-text-primary)]">=</span>{' '}
-            <span className="text-[var(--vscode-orange)]">{`"Dave Jones"`}</span>
-            ;
-          </h1>
+          <CodeHeader
+            syntax={[
+              { text: 'const', color: 'teal' },
+              { text: ' ', color: 'text-primary' },
+              { text: 'developer', color: 'blue' },
+              { text: ' = ', color: 'text-primary' },
+              { text: '"Dave Jones"', color: 'orange' },
+              { text: ';', color: 'text-primary' },
+            ]}
+          />
 
-          <div className="bg-[var(--vscode-bg-secondary)] border border-[var(--vscode-border-primary)] rounded p-6 mb-6">
+          <BaseCard className="mb-6" hover={false}>
             <div className="flex flex-col md:flex-row md:items-start gap-6">
               <div className="flex-shrink-0">
                 <div className="w-32 h-32 md:w-40 md:h-40 rounded-full border-2 border-[var(--vscode-border-light)] hover:border-[var(--vscode-blue)] transition-colors overflow-hidden">
@@ -93,44 +100,39 @@ export default function AboutPage() {
                 </p>
               </div>
             </div>
-          </div>
+          </BaseCard>
         </section>
 
         <section className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          <div className="bg-[var(--vscode-bg-secondary)] border border-[var(--vscode-border-primary)] rounded p-6 hover:border-[var(--vscode-blue)] transition-colors">
-            <h2 className="text-xl font-semibold text-[var(--vscode-blue)] mb-3 font-mono">
-              <span className="text-[var(--vscode-text-disabled)]">{'//'}</span>{' '}
-              Quick Facts
-            </h2>
-            <ul className="space-y-2 text-[var(--vscode-text-primary)]">
-              <li className="flex items-start">
-                <span className="text-[var(--vscode-teal)] mr-2">→</span>
-                Senior software engineer with Air Force and defense contractor
-                background
-              </li>
-              <li className="flex items-start">
-                <span className="text-[var(--vscode-teal)] mr-2">→</span>
-                Technical lead with experience stepping into management roles
-                when needed
-              </li>
-              <li className="flex items-start">
-                <span className="text-[var(--vscode-teal)] mr-2">→</span>
-                Security-focused developer with CSSLP certification and
-                compliance expertise
-              </li>
-              <li className="flex items-start">
-                <span className="text-[var(--vscode-teal)] mr-2">→</span>
-                Introduced AI integration to development team and presented at
-                government tech conference
-              </li>
-            </ul>
-          </div>
+          <BaseCard>
+            <CodeHeader
+              level="h2"
+              syntax={[
+                { text: '//', color: 'text-disabled' },
+                { text: ' Quick Facts', color: 'green' },
+              ]}
+              className="mb-3"
+            />
+            <BulletList
+              items={[
+                'Senior software engineer with Air Force and defense contractor background',
+                'Technical lead with experience stepping into management roles when needed',
+                'Security-focused developer with CSSLP certification and compliance expertise',
+                'Introduced AI integration to development team and presented at government tech conference',
+              ]}
+              bulletStyle="arrow"
+            />
+          </BaseCard>
 
-          <div className="bg-[var(--vscode-bg-secondary)] border border-[var(--vscode-border-primary)] rounded p-6 hover:border-[var(--vscode-blue)] transition-colors">
-            <h2 className="text-xl font-semibold text-[var(--vscode-blue)] mb-3 font-mono">
-              <span className="text-[var(--vscode-text-disabled)]">{'//'}</span>{' '}
-              Tech Stack
-            </h2>
+          <BaseCard>
+            <CodeHeader
+              level="h2"
+              syntax={[
+                { text: '//', color: 'text-disabled' },
+                { text: ' Tech Stack', color: 'green' },
+              ]}
+              className="mb-3"
+            />
             <div className="flex flex-wrap gap-2">
               {[
                 'React/Redux',
@@ -149,21 +151,22 @@ export default function AboutPage() {
                 'Docker',
                 'AWS',
               ].map((tech) => (
-                <span
-                  key={tech}
-                  className="px-3 py-1 bg-[var(--vscode-bg-tertiary)] border border-[var(--vscode-border-light)] rounded text-sm text-[var(--vscode-text-primary)] hover:border-[var(--vscode-teal)] transition-colors"
-                >
+                <TechTag key={tech} size="md">
                   {tech}
-                </span>
+                </TechTag>
               ))}
             </div>
-          </div>
+          </BaseCard>
 
-          <div className="bg-[var(--vscode-bg-secondary)] border border-[var(--vscode-border-primary)] rounded p-6 hover:border-[var(--vscode-blue)] transition-colors">
-            <h2 className="text-xl font-semibold text-[var(--vscode-blue)] mb-3 font-mono">
-              <span className="text-[var(--vscode-text-disabled)]">{'//'}</span>{' '}
-              Certifications
-            </h2>
+          <BaseCard>
+            <CodeHeader
+              level="h2"
+              syntax={[
+                { text: '//', color: 'text-disabled' },
+                { text: ' Certifications', color: 'green' },
+              ]}
+              className="mb-3"
+            />
             <div className="space-y-3">
               <div className="border-l-2 border-[var(--vscode-teal)] pl-4">
                 <h3 className="text-[var(--vscode-text-primary)] font-semibold">
@@ -180,7 +183,7 @@ export default function AboutPage() {
                 </p>
               </div>
             </div>
-          </div>
+          </BaseCard>
         </section>
       </div>
     </>
