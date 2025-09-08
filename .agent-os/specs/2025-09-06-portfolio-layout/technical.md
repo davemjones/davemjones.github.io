@@ -314,25 +314,25 @@ const nextConfig = {
 // app/layout.tsx
 export const metadata: Metadata = {
   title: {
-    template: '%s | Dave M. Jones',
-    default: 'Dave M. Jones | Developer Portfolio',
+    template: '%s | Dave Jones',
+    default: 'Dave Jones | Developer Portfolio',
   },
   description:
     'Portfolio showcasing development expertise, projects, and curated resources from the developer community.',
   keywords: ['developer', 'portfolio', 'React', 'Next.js', 'TypeScript'],
-  authors: [{ name: 'Dave M. Jones' }],
-  creator: 'Dave M. Jones',
+  authors: [{ name: 'Dave Jones' }],
+  creator: 'Dave Jones',
   openGraph: {
     type: 'website',
     locale: 'en_US',
     url: 'https://davemjones.github.io',
-    siteName: 'Dave M. Jones Portfolio',
+    siteName: 'Dave Jones Portfolio',
     images: [
       {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Dave M. Jones Developer Portfolio',
+        alt: 'Dave Jones Developer Portfolio',
       },
     ],
   },
@@ -349,7 +349,7 @@ export const metadata: Metadata = {
 const structuredData = {
   '@context': 'https://schema.org',
   '@type': 'Person',
-  name: 'Dave M. Jones',
+  name: 'Dave Jones',
   jobTitle: 'Software Developer',
   url: 'https://davemjones.github.io',
   sameAs: [
