@@ -1,0 +1,51 @@
+[
+  {
+    "name": "Daniel Miessler",
+    "title": "Cybersecurity / AI Engineer",
+    "summary": "In Daniel Miessler's framework of human development, we've evolved from \"Human 1.0\" (the survival-focused Primitive Era) through \"Human 2.0\" (the Corporate Era defined by capitalism and corporate hierarchies) and now stand at the threshold of \"Human 3.0\" or the \"Creative Era.\" This new paradigm emerges as our traditional sources of meaning—religion and work—are simultaneously declining, creating an existential vacuum. Miessler envisions Human 3.0 as a liberation from corporate roles, where people instead define themselves as creative individuals who merge work with genuine passion. In this state, people engage in what he calls \"Play\"—activities they love so deeply they get lost in them, yet which also create value for others. His ideal future features billions of people \"resonating at their own personal frequencies\" through various creative pursuits, from art and technology to food and exploration, each offering their unique gifts to the world rather than working to enrich others.",
+    "socialLinks": [
+      {
+        "label": "GitHub",
+        "url": "https://github.com/danielmiessler"
+      },
+      {
+        "label": "YouTube",
+        "url": "https://www.youtube.com/@unsupervised-learning"
+      },
+      {
+        "label": "Website",
+        "url": "https://danielmiessler.com/"
+      }
+    ]
+  },
+  {
+    "name": "Brian Casel",
+    "title": "Product Builder turned AI-first Developer",
+    "summary": "Brian Casel is a career software developer, designer, and entrepreneur who has become known for his innovative work with AI-driven development tools. In 2025, he created AgentOS, a free and open-source system designed to transform AI coding assistants 'from confused interns into productive developers.' AgentOS employs structured workflows that capture coding standards, tech stack details, and codebase specifics to help AI agents produce quality code on the first attempt.  This system works with various AI tools including Claude Code and Cursor, and is part of Casel's broader mission through his Builder Methods platform, where he teaches fellow software professionals how to leverage AI to build better products faster through newsletters, courses, and coaching.  Through AgentOS, Casel has established himself as a thought leader in the emerging field of AI-assisted software development, providing practical frameworks for developers to maintain control over their coding standards while maximizing the benefits of AI coding assistants.",
+    "socialLinks": [
+      {
+        "label": "AgentOS",
+        "url": "https://github.com/buildermethods/agent-os"
+      },
+      {
+        "label": "Website",
+        "url": "https://briancasel.com/"
+      },
+      {
+        "label": "BuilderMethods",
+        "url": "https://buildermethods.com/"
+      }
+    ]
+  },
+  {
+    "name": "Dave Plummer",
+    "title": "Former Microsoft Engineer, Dave's Garage YouTuber",
+    "summary": "Dave Plummer is a Canadian-American programmer and entrepreneur who made significant contributions to Microsoft's software ecosystem during his tenure from 1993 to 2003. He is best known for creating Windows Task Manager, which he originally developed at home as a shareware application before it was incorporated into Windows NT 4.0 in 1996 at the suggestion of Windows NT architect Dave Cutler.  His other notable contributions include porting Space Cadet Pinball to Windows NT, adding ZIP file support to Windows (through his VisualZIP utility), and working on MS-DOS 6.2 and Windows 95/NT/XP. After leaving Microsoft, Plummer founded his own software company and later became a popular YouTube personality through his channel 'Dave's Garage', where he shares insights on software development, stories from his Microsoft days, and his passion for technology.  He's also an author of books on autism, having been diagnosed with Autism Spectrum Disorder later in life.",
+    "socialLinks": [
+      {
+        "label": "YouTube",
+        "url": "https://www.youtube.com/@DavesGarage"
+      }
+    ]
+  }
+]
