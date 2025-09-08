@@ -1,5 +1,9 @@
 import { Metadata } from 'next';
 import experienceData from './experience.json';
+import BaseCard from '@/components/ui/BaseCard';
+import TechTag from '@/components/ui/TechTag';
+import CodeHeader from '@/components/ui/CodeHeader';
+import BulletList from '@/components/ui/BulletList';
 
 export const metadata: Metadata = {
   title: 'Experience - Dave Jones',
@@ -10,33 +14,34 @@ export default function ExperiencePage() {
   return (
     <div className="animate-fade-in">
       <section className="mb-8">
-        <h1 className="text-3xl md:text-4xl font-bold text-[var(--vscode-text-primary)] mb-4 font-mono">
-          <span className="text-[var(--vscode-teal)]">function</span>{' '}
-          <span className="text-[var(--vscode-blue)]">getExperience</span>
-          <span className="text-[var(--vscode-text-primary)]">()</span>{' '}
-          <span className="text-[var(--vscode-text-primary)]">{'{'}</span>
-        </h1>
+        <CodeHeader
+          syntax={[
+            { text: 'function', color: 'teal' },
+            { text: ' ', color: 'text-primary' },
+            { text: 'getExperience', color: 'blue' },
+            { text: '()', color: 'text-primary' },
+            { text: ' ', color: 'text-primary' },
+            { text: '{', color: 'text-primary' },
+          ]}
+        />
 
-        <div className="bg-[var(--vscode-bg-secondary)] border border-[var(--vscode-border-primary)] rounded p-6 mb-6">
+        <BaseCard className="mb-6" hover={false}>
           <p className="text-[var(--vscode-text-primary)] leading-relaxed">
             Over 15 years of professional experience building mission-critical
             applications for government and enterprise clients. From Air Force
             systems to defense contractor solutions, here&apos;s my career
             journey.
           </p>
-        </div>
+        </BaseCard>
       </section>
 
       <section className="space-y-6">
         {experienceData.map((job, index) => (
-          <div
-            key={index}
-            className="bg-[var(--vscode-bg-secondary)] border border-[var(--vscode-border-primary)] rounded p-6 hover:border-[var(--vscode-blue)] transition-colors"
-          >
+          <BaseCard key={index}>
             <div className="flex justify-between items-start mb-3">
-              <h2 className="text-xl font-semibold text-[var(--vscode-blue)] font-mono">
+              <CodeHeader level="h2" className="mb-0">
                 {job.jobTitle}
-              </h2>
+              </CodeHeader>
               <span className="text-[var(--vscode-text-disabled)] text-sm font-mono">
                 {job.startDate} - {job.endDate}
               </span>
@@ -47,25 +52,19 @@ export default function ExperiencePage() {
             <p className="text-[var(--vscode-text-secondary)] text-sm mb-4 font-mono">
               {job.location}
             </p>
-            <ul className="space-y-2 text-[var(--vscode-text-primary)] mb-4">
-              {job.accomplishments.map((accomplishment, accIndex) => (
-                <li key={accIndex} className="flex items-start">
-                  <span className="text-[var(--vscode-green)] mr-2">✓</span>
-                  {accomplishment}
-                </li>
-              ))}
-            </ul>
+            <BulletList
+              items={job.accomplishments}
+              bulletStyle="check"
+              className="mb-4"
+            />
             <div className="flex flex-wrap gap-2">
               {job.technologies.map((tech, techIndex) => (
-                <span
-                  key={techIndex}
-                  className="px-2 py-1 bg-[var(--vscode-bg-tertiary)] border border-[var(--vscode-border-light)] rounded text-xs text-[var(--vscode-text-secondary)] hover:border-[var(--vscode-teal)] transition-colors font-mono"
-                >
-                  #{tech}
-                </span>
+                <TechTag key={techIndex} variant="hash">
+                  {tech}
+                </TechTag>
               ))}
             </div>
-          </div>
+          </BaseCard>
         ))}
       </section>
 
