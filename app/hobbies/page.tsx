@@ -4,6 +4,7 @@ import TechTag from '@/components/ui/TechTag';
 import CodeHeader from '@/components/ui/CodeHeader';
 import ActionLink from '@/components/ui/ActionLink';
 import BulletList from '@/components/ui/BulletList';
+import projectsData from './projects.json';
 
 export const metadata: Metadata = {
   title: 'Hobbies & Side Projects - Dave Jones',
@@ -33,72 +34,22 @@ export default function HobbiesPage() {
       </section>
 
       <section className="grid md:grid-cols-2 gap-6 mb-8">
-        {/* Project 1 */}
-        <BaseCard>
-          <CodeHeader level="h2">🚀 Open Source CLI Tool</CodeHeader>
-          <p className="text-[var(--vscode-text-secondary)] mb-3">
-            A command-line tool for automating development workflows, written in
-            Go.
-          </p>
-          <div className="flex flex-wrap gap-2 mb-3">
-            <TechTag>Go</TechTag>
-            <TechTag>CLI</TechTag>
-            <TechTag>Open Source</TechTag>
-          </div>
-          <ActionLink href="#" external>
-            View on GitHub
-          </ActionLink>
-        </BaseCard>
-
-        {/* Project 2 */}
-        <BaseCard>
-          <CodeHeader level="h2">📊 Data Visualization Dashboard</CodeHeader>
-          <p className="text-[var(--vscode-text-secondary)] mb-3">
-            Interactive dashboard for visualizing complex datasets using D3.js
-            and React.
-          </p>
-          <div className="flex flex-wrap gap-2 mb-3">
-            <TechTag>React</TechTag>
-            <TechTag>D3.js</TechTag>
-            <TechTag>TypeScript</TechTag>
-          </div>
-          <ActionLink href="#" external>
-            Live Demo
-          </ActionLink>
-        </BaseCard>
-
-        {/* Project 3 */}
-        <BaseCard>
-          <CodeHeader level="h2">🤖 Machine Learning Experiments</CodeHeader>
-          <p className="text-[var(--vscode-text-secondary)] mb-3">
-            Exploring ML algorithms and building predictive models with Python
-            and TensorFlow.
-          </p>
-          <div className="flex flex-wrap gap-2 mb-3">
-            <TechTag>Python</TechTag>
-            <TechTag>TensorFlow</TechTag>
-            <TechTag>Jupyter</TechTag>
-          </div>
-          <ActionLink href="#" external>
-            View Notebooks
-          </ActionLink>
-        </BaseCard>
-
-        {/* Project 4 */}
-        <BaseCard>
-          <CodeHeader level="h2">🎮 Game Development</CodeHeader>
-          <p className="text-[var(--vscode-text-secondary)] mb-3">
-            Building indie games using Unity and C# in my spare time.
-          </p>
-          <div className="flex flex-wrap gap-2 mb-3">
-            <TechTag>Unity</TechTag>
-            <TechTag>C#</TechTag>
-            <TechTag>Game Dev</TechTag>
-          </div>
-          <ActionLink href="#" external>
-            Play on itch.io
-          </ActionLink>
-        </BaseCard>
+        {projectsData.map((project, index) => (
+          <BaseCard key={index}>
+            <CodeHeader level="h2">{project.projectName}</CodeHeader>
+            <p className="text-[var(--vscode-text-secondary)] mb-3">
+              {project.summary}
+            </p>
+            <div className="flex flex-wrap gap-2 mb-3">
+              {project.techTags.map((tech, techIndex) => (
+                <TechTag key={techIndex}>{tech}</TechTag>
+              ))}
+            </div>
+            <ActionLink href={project.url} external>
+              View on GitHub
+            </ActionLink>
+          </BaseCard>
+        ))}
       </section>
 
       <section>
@@ -112,12 +63,12 @@ export default function HobbiesPage() {
         <BaseCard hover={false}>
           <BulletList
             items={[
-              'Contributing to open source projects',
-              'Writing technical blog posts',
-              'Attending tech meetups and conferences',
-              'Learning new programming languages',
-              'Building home automation projects',
-              'Photography and digital art',
+              'Learning to sew menswear 🧵',
+              'Jogging city trails 🏃🏻',
+              'Senior pet adoptions',
+              'Learning new technologies - AT Protocol (Bluesky)',
+              'Building home automation projects - Home Assistant',
+              'Responsible AI use',
             ]}
             bulletStyle="dot"
             className="grid md:grid-cols-2 gap-3"
