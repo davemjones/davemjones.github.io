@@ -1,0 +1,130 @@
+[
+  {
+    "company": "Definitive Logic / MANTECH",
+    "location": "Dallas, Texas (Remote)",
+    "jobTitle": "Senior Software Engineer",
+    "startDate": "August 2023",
+    "endDate": "Present",
+    "accomplishments": [
+      "Architect and maintain mission-critical React/Redux SPA (eBOSS) serving Air Force promotion boards and personnel systems",
+      "Step into scrum master role during team transitions, ensuring continuous delivery of critical government systems",
+      "Developed comprehensive video tutorial series to replace outdated Word document manuals, providing enhanced training for the modernized eBOSS application",
+      "Independently initiated and implemented React unit testing framework without management direction, demonstrating self-driven commitment to code quality and best practices",
+      "Execute security audits using Checkmarx, identifying and remediating 95% of vulnerabilities within SLA requirements",
+      "Champion AI tool integration across HRSTS portfolio, improving development velocity by 40% team-wide",
+      "Delivered keynote presentation on AI development practices at government technology conference, influencing department-wide adoption"
+    ],
+    "technologies": [
+      "ReactJS",
+      "Redux",
+      "Java",
+      "Spring",
+      "Oracle",
+      "JavaScript",
+      "Checkmarx",
+      "Jest",
+      "AI Tools"
+    ]
+  },
+  {
+    "company": "DTSI Inc",
+    "location": "San Antonio, Texas",
+    "jobTitle": "Software Engineer",
+    "startDate": "September 2017",
+    "endDate": "July 2023",
+    "accomplishments": [
+      "Took over as the lead front-end developer, executing complete migration of legacy Silverlight/WCF enterprise application to modern ReactJS/Java Spring stack",
+      "Mentored junior developers on modern React development practices and enterprise application architecture",
+      "Led daily scrums and sprint planning during 6-month management transition, maintaining team productivity and project delivery schedules",
+      "Collaborated with development team to design and implement Azure DevOps CI/CD pipeline",
+      "Collaborated with development team and system administrators to establish modern internal development environment for entire company, migrating all development work from aging government systems",
+      "Conducted comprehensive security assessments using Checkmarx, achieving 100% compliance with federal security standards"
+    ],
+    "technologies": [
+      "ReactJS",
+      "Redux",
+      "Silverlight",
+      "WCF",
+      "Azure DevOps",
+      "CI/CD",
+      "Checkmarx",
+      "JavaScript",
+      "Java",
+      "Spring"
+    ]
+  },
+  {
+    "company": "United States Air Force",
+    "location": "Randolph AFB",
+    "jobTitle": "Software Engineer",
+    "startDate": "November 2010",
+    "endDate": "September 2017",
+    "accomplishments": [
+      "Led technical development of Air Force Promotion Testing System, delivering 240 annual promotion tests serving 100,000+ military personnel",
+      "Developed secure Java prototype testing platform with integrated Smart Card authentication",
+      "Built comprehensive management framework using .NET, WPF, and Oracle, streamlining test administration",
+      "Served as primary technical escalation point for mission-critical issues",
+      "Led full software development lifecycle for multiple Air Force applications, from requirements gathering through deployment and maintenance",
+      "Mentored junior developers through technology transitions, improving team capabilities and reducing project delivery time",
+      "Collaborated with security management to achieve system ATO and maintain annual FISMA compliance for government systems"
+    ],
+    "technologies": [
+      "Java",
+      ".NET",
+      "WPF",
+      "Oracle",
+      "Smart Card",
+      "FISMA",
+      "ATO",
+      "SDLC"
+    ]
+  },
+  {
+    "company": "MacAulay-Brown, Inc.",
+    "location": "San Antonio, Texas",
+    "jobTitle": "Network Defense Analyst",
+    "startDate": "May 2007",
+    "endDate": "September 2010",
+    "accomplishments": [
+      "Managed team of 30 network defense analysts, coordinating 24/7 threat response operations for Air Force Global Information Grid infrastructure",
+      "Delivered real-time intrusion detection and incident response, protecting critical military networks from advanced persistent threats",
+      "Engineered custom threat detection rules and automated filters using ArcSight SIEM, reducing false positives by 70% and improving analyst efficiency",
+      "Performed advanced network forensics using enterprise security tools (NIKSUN, McAfee HBSS, WireShark), identifying and mitigating sophisticated cyber attacks",
+      "Developed proprietary event analysis tracking system, centralizing threat intelligence"
+    ],
+    "technologies": [
+      "ArcSight",
+      "Ironmail",
+      "NIKSUN NetDetector",
+      "McAfee HBSS",
+      "WireShark",
+      "Oracle 10g",
+      "PL/SQL",
+      "SQL",
+      "PHP",
+      "Apache",
+      "jQuery"
+    ]
+  },
+  {
+    "company": "United States Air Force",
+    "location": "Randolph AFB",
+    "jobTitle": "Systems Analyst",
+    "startDate": "February 2002",
+    "endDate": "February 2006",
+    "accomplishments": [
+      "Goverment analyst for Fortran legacy system modernization initiative, transitioning critical statistical analysis applications to modern architecture",
+      "Reverse-engineered complex proprietary statistical software, documenting algorithms and business logic for system migration",
+      "Served as government liaison with contractors, managing project deliverables and ensuring on-time completion",
+      "Executed comprehensive black-box testing protocols, achieving 99% defect-free software delivery and stakeholder acceptance"
+    ],
+    "technologies": [
+      "Sybase Powerbuilder",
+      "Powerscript",
+      "Fortran",
+      "Oracle 9i",
+      "SQL",
+      "Microsoft Office"
+    ]
+  }
+]
