@@ -96,7 +96,7 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <section className="grid md:grid-cols-2 gap-6">
+        <section className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           <div className="bg-[var(--vscode-bg-secondary)] border border-[var(--vscode-border-primary)] rounded p-6 hover:border-[var(--vscode-blue)] transition-colors">
             <h2 className="text-xl font-semibold text-[var(--vscode-blue)] mb-3 font-mono">
               <span className="text-[var(--vscode-text-disabled)]">{'//'}</span>{' '}
@@ -156,6 +156,29 @@ export default function AboutPage() {
                   {tech}
                 </span>
               ))}
+            </div>
+          </div>
+
+          <div className="bg-[var(--vscode-bg-secondary)] border border-[var(--vscode-border-primary)] rounded p-6 hover:border-[var(--vscode-blue)] transition-colors">
+            <h2 className="text-xl font-semibold text-[var(--vscode-blue)] mb-3 font-mono">
+              <span className="text-[var(--vscode-text-disabled)]">{'//'}</span>{' '}
+              Certifications
+            </h2>
+            <div className="space-y-3">
+              <div className="border-l-2 border-[var(--vscode-teal)] pl-4">
+                <h3 className="text-[var(--vscode-text-primary)] font-semibold">
+                  CSSLP
+                </h3>
+                <p className="text-[var(--vscode-text-secondary)] text-sm">
+                  Certified Secure Software Lifecycle Professional
+                </p>
+                <p className="text-[var(--vscode-text-disabled)] text-xs mt-1">
+                  2017 - Present
+                </p>
+                <p className="text-[var(--vscode-text-disabled)] text-xs">
+                  ISC² Member ID: 367144
+                </p>
+              </div>
             </div>
           </div>
         </section>
