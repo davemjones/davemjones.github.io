@@ -109,7 +109,7 @@ export default function AboutPage() {
               level="h2"
               syntax={[
                 { text: '//', color: 'text-disabled' },
-                { text: ' Quick Facts', color: 'text-primary' },
+                { text: ' Quick Facts', color: 'green' },
               ]}
               className="mb-3"
             />
@@ -129,7 +129,7 @@ export default function AboutPage() {
               level="h2"
               syntax={[
                 { text: '//', color: 'text-disabled' },
-                { text: ' Tech Stack', color: 'text-primary' },
+                { text: ' Tech Stack', color: 'green' },
               ]}
               className="mb-3"
             />
@@ -151,7 +151,7 @@ export default function AboutPage() {
                 'Docker',
                 'AWS',
               ].map((tech) => (
-                <TechTag key={tech} variant="hover" size="md">
+                <TechTag key={tech} size="md">
                   {tech}
                 </TechTag>
               ))}
@@ -163,7 +163,7 @@ export default function AboutPage() {
               level="h2"
               syntax={[
                 { text: '//', color: 'text-disabled' },
-                { text: ' Certifications', color: 'text-primary' },
+                { text: ' Certifications', color: 'green' },
               ]}
               className="mb-3"
             />
