@@ -46,7 +46,7 @@ export default function ExperiencePage() {
                 {job.startDate} - {job.endDate}
               </span>
             </div>
-            <h3 className="text-[var(--vscode-teal)] mb-2 font-mono">
+            <h3 className="text-[var(--vscode-blue)] mb-2 font-mono">
               {job.company}
             </h3>
             <p className="text-[var(--vscode-text-secondary)] text-sm mb-4 font-mono">
@@ -59,9 +59,7 @@ export default function ExperiencePage() {
             />
             <div className="flex flex-wrap gap-2">
               {job.technologies.map((tech, techIndex) => (
-                <TechTag key={techIndex} variant="hash">
-                  {tech}
-                </TechTag>
+                <TechTag key={techIndex}>{tech}</TechTag>
               ))}
             </div>
           </BaseCard>
